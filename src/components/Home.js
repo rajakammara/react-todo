@@ -1,9 +1,6 @@
 import Todo from "./Todo";
-const Home = ({ todos }) => {
-    const updateComplete = (id) => {
-           console.log(id)
-           
-    }
+const Home = ({ todos,onTodoCompleted }) => {
+    
   return (
     <div className="container mx-auto max-w-md">
       <button className="mt-2 mb-2 p-2 bg-blue-500 text-white float-right">
@@ -21,7 +18,7 @@ const Home = ({ todos }) => {
       </form>
        
       {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} handleComplete={updateComplete}/>
+        <Todo key={todo.id} todo={todo} onTodoCompleted={onTodoCompleted}/>
       ))}
     </div>
   );
